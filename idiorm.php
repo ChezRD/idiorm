@@ -2225,7 +2225,7 @@ class ORM implements ArrayAccess {
 	 * @return int
 	 */
 	public function get_calc_rows() {
-		self::_execute('SELECT FOUND_ROWS() as cnt', null, $this->_connection_name);
+		self::_execute('SELECT FOUND_ROWS() as cnt', array(), $this->_connection_name);
 		$statement = self::get_last_statement();
 
 		$result = $statement->fetch(PDO::FETCH_ASSOC);
